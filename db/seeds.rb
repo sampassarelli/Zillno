@@ -47,3 +47,6 @@ puts "Creating Tours..."
 5.times do
 Tour.create(agent_id: Agent.all.sample.id, buyer_id: User.all.sample.id, house_id: House.all.sample.id)
 end
+
+
+puts "IF YOU SEE THIS IT MEANS YOU PULLED RIGHT"
