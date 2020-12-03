@@ -9,7 +9,7 @@
 User.destroy_all 
 Agent.destroy_all
 House.destroy_all
-Purchase.destroy_all
+Offer.destroy_all
 Tour.destroy_all
 HouseReview.destroy_all
 
@@ -42,17 +42,17 @@ puts "Creating Houses..."
 
 house1 = House.create(address: "40 E 9th St, Chicago, IL 60605", price: 500_000, seller_id: arham.id, agent_id: brodrick.id, picture: "https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1026205392%2F0x0.jpg", bedrooms: 4, bathrooms: 3, description: "This house is awesome")
 house2 = House.create(address: "28 E Jackson, Chicago, IL 60604", price: 1_000_000, seller_id: cole.id, agent_id: derick.id, picture: "https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1026205392%2F0x0.jpg", bedrooms: 4, bathrooms: 3, description: "This house is awesome")
-house3 = House.create(address: "2 E 8th St, Chicago, IL 60605", price: 200_000, seller_id: dom.id, agent_id: marcia.id, picture: "https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1026205392%2F0x0.jpg", bedrooms: 4, bathrooms: 3, description: "This house is awesome")
-house4 = House.create(address: "264 S Lawndale, Chicago, IL 60604", price: 259_000, seller_id: emily.id, agent_id: alexa.id, picture: "https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1026205392%2F0x0.jpg", bedrooms: 4, bathrooms: 3, description: "This house is awesome")
-house5 = House.create(address: "8405 Browne St, Omaha, NE 68134", price: 600_000, seller_id: isabelle.id, agent_id: bart.id, picture: "https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1026205392%2F0x0.jpg", bedrooms: 4, bathrooms: 3, description: "This house is awesome")
+house3 = House.create(address: "2 E 8th St, Chicago, IL 60605", price: 200_000, seller_id: dom.id, agent_id: jarod.id, picture: "https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1026205392%2F0x0.jpg", bedrooms: 4, bathrooms: 3, description: "This house is awesome")
+house4 = House.create(address: "264 S Lawndale, Chicago, IL 60604", price: 259_000, seller_id: emily.id, agent_id: christian.id, picture: "https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1026205392%2F0x0.jpg", bedrooms: 4, bathrooms: 3, description: "This house is awesome")
+house5 = House.create(address: "8405 Browne St, Omaha, NE 68134", price: 600_000, seller_id: isabelle.id, agent_id: ryan.id, picture: "https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1026205392%2F0x0.jpg", bedrooms: 4, bathrooms: 3, description: "This house is awesome")
 
-puts "Creating Purchases..."
+puts "Creating Offers..."
 
-Purchase.create(agent_id: brodrick.id, buyer_id: sam.id, house_id: house1.id)
-Purchase.create(agent_id: derick.id, buyer_id: rakshan.id, house_id: house2.id)
-Purchase.create(agent_id: jarod.id, buyer_id: dena.id, house_id: house3.id)
-Purchase.create(agent_id: christian.id, buyer_id: max.id, house_id: house4.id)
-Purchase.create(agent_id: ryan.id, buyer_id: muhidin.id, house_id: house5.id)
+Offer.create(agent_id: brodrick.id, buyer_id: sam.id, house_id: house1.id, amount: 450_000)
+Offer.create(agent_id: derick.id, buyer_id: rakshan.id, house_id: house2.id, amount: 750_000)
+Offer.create(agent_id: jarod.id, buyer_id: dena.id, house_id: house3.id, amount: 195_000)
+Offer.create(agent_id: christian.id, buyer_id: max.id, house_id: house4.id, amount: 240_000)
+Offer.create(agent_id: ryan.id, buyer_id: muhidin.id, house_id: house5.id, amount:600_000)
 
 puts "Creating Tours..."
 
