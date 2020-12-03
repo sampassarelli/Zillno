@@ -1,4 +1,4 @@
-class PurchasesController < ApplicationController
+class OffersController < ApplicationController
 
     def show 
 
