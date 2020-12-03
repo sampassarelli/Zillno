@@ -1,11 +1,11 @@
 class ToursController < ApplicationController
 
     def show 
-
+        find_tour
     end
 
     def new 
-
+        @tour = Tour.new
     end
 
     def create 
@@ -13,7 +13,7 @@ class ToursController < ApplicationController
     end
 
     def edit 
-
+        find_tour
     end
 
     def update 
@@ -21,7 +21,7 @@ class ToursController < ApplicationController
     end
 
     def destroy
-
+        find_tour.destroy
     end 
 
     private 
@@ -31,6 +31,6 @@ class ToursController < ApplicationController
     end
 
     def tour_params
-
+        params.require(:tour).permit(:agent_id, :buyer_id, :house_id, :date, :time)
     end
 end
