@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :house_reviews
   resources :tours, except: [:index]
-  resources :purchases, only: [:show, :new, :create]
+  resources :offers, only: [:show, :new, :create]
   resources :houses
   resources :users, except: [:index]
   resources :agents, only: [:index, :show]

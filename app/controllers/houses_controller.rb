@@ -36,7 +36,7 @@ class HousesController < ApplicationController
       end
 
       def find_house
-        @house = House.fine(params[:id])
+        @house = House.find(params[:id])
       end
       
 end
