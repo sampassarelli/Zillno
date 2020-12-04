@@ -1,43 +1,42 @@
 class HousesController < ApplicationController
   skip_before_action :authorization, only: [:index]
 
-    def 
-      def index
-        @houses = House.all
-      end
+  def index
+    @houses = House.all
+  end
+
+  def show
+    find_house
+  end
+  
+  def new 
+    @house = House.new
+  end
+
+  def create
     
-      def show
-        find_house
-      end
-     
-      def new 
-        @house = House.new
-      end
+  end
+  
+  def edit
+    find_house
+  end
 
-      def create
-        
-      end
-      
-      def edit
-        find_house
-      end
+  def update
+  
+  end
 
-      def update
-      
-      end
-    
-      def destroy
-        find_house.destroy
-      end
+  def destroy
+    find_house.destroy
+  end
 
-      private 
+  private 
 
-      def house_params 
-        params.require(:house).permit(:address, :price, :seller_id, :agent_id, :bedrooms, :bathrooms, :description, :picture)
-      end
+  def house_params 
+    params.require(:house).permit(:address, :price, :seller_id, :agent_id, :bedrooms, :bathrooms, :description, :picture)
+  end
 
-      def find_house
-        @house = House.find(params[:id])
-      end
+  def find_house
+    @house = House.find(params[:id])
+  end
       
 end

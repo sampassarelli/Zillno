@@ -1,1 +1,7 @@
 <h1>House Index</h1>
+
+<% @houses.each do |house|%>
+   <img src= <%=house.picture%> alt="house picture" width="375" height="250"><br>
+   <%= house.address %><br>
+   Beds: <%= house.bedrooms %> |  Baths: <%= house.bathrooms %><br>
+<% end%>

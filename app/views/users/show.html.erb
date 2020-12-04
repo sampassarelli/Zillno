@@ -1,1 +1,10 @@
 <h1>show user</h1>
+
+Hello, <%= @user.name %><br>
+
+<img src=<%= @user.img_url%> alt="profile picture" width="250" height="250"><br>
+
+
+<%= @user.user_name %>
+
+<%= link_to "Edit Profile", edit_user_path %>

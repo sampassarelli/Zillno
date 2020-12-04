@@ -1,2 +1,12 @@
 <h1>Agents!</h1>
 
+<% @agents.each do |agent| %>
+
+    <img src=<%= agent.picture %> alt="agent" width="75" height="75"><br>
+    <%= link_to agent.full_name, agent_path(agent) %> | Years of Experience: <%= agent.years_experience %> <br>
+    <%= agent.bio %><br>
+    <br>
+ 
+
+    <% end %>
+
