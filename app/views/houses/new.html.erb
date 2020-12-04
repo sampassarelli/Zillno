@@ -13,7 +13,7 @@
     <%= f.number_field :bedrooms%><br>
     <br>
     <%= f.label :bathrooms %>
-    <%= f.number_field :bathrooms%><br>
+    <%= f.number_field :bathrooms, :step => "0.25"%><br>
     <br>
     <%= f.label :description %>
     <%= f.text_area :description%><br>

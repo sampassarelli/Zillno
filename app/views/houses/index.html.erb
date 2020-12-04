@@ -1,7 +1,7 @@
 <h1>House Index</h1>
 
 <% @houses.each do |house|%>
-   <img src= <%=house.picture%> alt="house picture" width="375" height="250"><br>
-   <%= link_to house.address, house_path(house) %><br>
+   <%= link_to image_tag(house.picture, size: "375x250"), house_path(house) %><br>
+   <%= house.address%><br>
    Beds: <%= house.bedrooms %> |  Baths: <%= house.bathrooms %><br>
 <% end%>

@@ -1,6 +1,12 @@
 <h1><%= @house.address %></h1>
-
+<% if @current_user.id == @house.seller.id%>
+<%= link_to "Edit Listing", edit_house_path %><br>
+<% else %>
+<% end %>
 <img src= <%=@house.picture%> alt="house picture" width="375" height="250"><br>
+<br>
+<h3>Seller:</h3>
+<%= @house.seller.user_name %><br>
 <br>
 <h3>Price:</h3>
 <%= @house.price %><br>

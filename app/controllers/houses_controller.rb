@@ -36,11 +36,19 @@ class HousesController < ApplicationController
   end
 
   def update
-  
+    merged_params = house_params.merge({:seller_id => current_user.id})
+    find_house
+    if find_house.update(merged_params)
+      redirect_to house_path(@house)
+    else 
+      render :edit
+    end
   end
+
 
   def destroy
     find_house.destroy
+    redirect_to houses_path
   end
 
   private 

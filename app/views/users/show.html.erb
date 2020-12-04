@@ -1,15 +1,17 @@
 <h1>Hello, <%= @user.name %></h1>
 
-<%= link_to "Edit Profile", edit_user_path %><br>
+<%= link_to "Edit Profile", edit_user_path %>||<%= link_to "Delete Account", user_path(@user), method: :delete, data: { confirm: "Are you sure?" } %><br>
+            
 
 <img src=<%= @user.img_url%> alt="profile picture" width="250" height="250"><br>
 
 
 <%= @user.user_name %>
-
-<h3>Your House Listings:</h3>
-<% @user.houses.each do |house| %>
-    <%= link_to house.address, house_path(house) %>
-    <br>
-<% end %>
+<% if @user.houses.any? %>
+        <h3>Your House Listings:</h3>
+        <% @user.houses.each do |house| %>
+            <%= link_to house.address, house_path(house) %> || <%= link_to "Edit Listing", edit_house_path %>|| <%= link_to "Delete Listing", house_path(house), method: :delete, data: { confirm: "Are you sure?" } %><br>
+            <br>
+        <% end %>
+    <% end %>
 <br>
