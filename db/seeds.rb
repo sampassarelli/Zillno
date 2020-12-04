@@ -57,18 +57,18 @@ Offer.create(agent_id: ryan.id, buyer_id: muhidin.id, house_id: house5.id, amoun
 
 puts "Creating Tours..."
 
-Tour.create(agent_id: brodrick.id, buyer_id: sam.id, house_id: house1.id)
-Tour.create(agent_id: derick.id, buyer_id: rakshan.id, house_id: house2.id)
-Tour.create(agent_id: jarod.id, buyer_id: dena.id, house_id: house3.id)
-Tour.create(agent_id: christian.id, buyer_id: max.id, house_id: house4.id)
-Tour.create(agent_id: ryan.id, buyer_id: muhidin.id, house_id: house5.id)
+Tour.create(agent_id: brodrick.id, buyer_id: sam.id, house_id: house1.id, date: "12-04-2020", time: "5:15pm")
+Tour.create(agent_id: derick.id, buyer_id: rakshan.id, house_id: house2.id, date: "12-05-2020", time: "2:35pm")
+Tour.create(agent_id: jarod.id, buyer_id: dena.id, house_id: house3.id, date: "12-20-2020", time: "7:00pm")
+Tour.create(agent_id: christian.id, buyer_id: max.id, house_id: house4.id, date: "12-06-2020", time: "11:45am")
+Tour.create(agent_id: ryan.id, buyer_id: muhidin.id, house_id: house5.id, date: "12-03-2020", time: "7:55pm")
 
 puts "Creating Reviews..."
 
 HouseReview.create(buyer_id: sam.id, house_id: house1.id, title: "Awesome house!", content: "No problems with house!")
 HouseReview.create(buyer_id: rakshan.id, house_id: house2.id, title: "Terrible house!", content: "Foundation cracked.")
 HouseReview.create(buyer_id: dena.id, house_id: house3.id, title: "Too expensive!", content: "Overpriced per square foot.")
-HouseReview.create(buyer_id: max.id, house_id: house4.id, title: "Good house, bad neighborhood", content: "House is fantastic and newly remodeled but area crime ridden.")
+HouseReview.create(buyer_id: max.id, house_id: house4.id, title: "Good house, bad yard", content: "House is fantastic and newly remodeled but yard is terrible.")
 HouseReview.create(buyer_id: muhidin.id, house_id: house5.id, title: "Good potential house", content: "House has good bones, need minor renovations.")
 
 

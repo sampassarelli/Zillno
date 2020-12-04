@@ -5,11 +5,11 @@
 <% end %>
 <img src= <%=@house.picture%> alt="house picture" width="375" height="250"><br>
 <br>
-<h3>Seller:</h3>
-<%= @house.seller.user_name %><br>
+<h3>Agent:</h3>
+<%= @house.agent.full_name %><br>
 <br>
 <h3>Price:</h3>
-<%= @house.price %><br>
+$<%= @house.price %><br>
 <br>
 <h3>Address:</h3>
 <%= @house.address %><br>
