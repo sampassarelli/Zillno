@@ -1,8 +1,11 @@
-<h1>House Show</h1>
+<h1><%= @house.address %></h1>
 
 <img src= <%=@house.picture%> alt="house picture" width="375" height="250"><br>
 <br>
-<h3>Address</h3>
+<h3>Price:</h3>
+<%= @house.price %><br>
+<br>
+<h3>Address:</h3>
 <%= @house.address %><br>
 <br>
 <h3>Bedrooms:</h3>
@@ -14,4 +17,11 @@
 <h3>Description:</h3>
 <%= @house.description %><br>
 <br>
+<%= render 'offers/show' %><br>
+<br>
+<%= render 'house_reviews/new' %>
+<br>
+<%= render 'house_reviews/show' %><br>
 <h3> <%= link_to 'Back', houses_path %></h3>
+
+

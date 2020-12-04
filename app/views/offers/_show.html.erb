@@ -1,0 +1,6 @@
+<% @offers.each do |offer| %>
+    <h3>Recent Offers!</h3><br>
+    <%= link_to "Make an offer!", new_offer_path %><br>
+    <br>
+    $<%= offer.amount %>
+<% end %>

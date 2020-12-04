@@ -7,6 +7,11 @@ class HousesController < ApplicationController
 
   def show
     find_house
+    @house_review = HouseReview.new
+    @house_reviews = @house.house_reviews
+
+    @offer = Offer.new
+    @offers = @house.offers
   end
   
   def new 

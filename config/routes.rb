@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
-  
-  resources :tours, except: [:index]
-  resources :offers, only: [:show, :new, :create]
   resources :houses do
-    resources :house_reviews, only: [:index, :show] 
+    resources :house_reviews
+    resources :offers
+    resources :tours
   end
+
+  resources :offers
+  resources :tours
   resources :house_reviews
   resources :users, except: [:index]
   resources :agents, only: [:index, :show]

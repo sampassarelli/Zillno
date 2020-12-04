@@ -1,6 +1,4 @@
-<h1>House Review <%= @house_review.house_id.address %></h1>
-
-<%= form_for @house_review do |f| %>
+<%= form_for ([@house, @house_review]) do |f| %>
   <%= f.label :title %><br>
   <%= f.text_field :title %><br>
     <br>
