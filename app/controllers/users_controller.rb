@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
     def destroy 
         find_user.destroy
-        redirect_to users_path
+        redirect_to houses_path
     end
 
     private 

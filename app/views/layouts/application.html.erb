@@ -7,9 +7,47 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
+    <div class="row backgroundimg">
+      <div class="container">
+
+    </div>
+
+
+  <header class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+          <%= link_to "Zillno", houses_path, class:"navbar-brand" %>
+        </div>
+    <ul class="nav navbar-nav navbar-right">
+      <% if session[:user_id] %>
+      <% @user = User.find(session[:user_id]) %>
+      <li> <%= link_to "Profile", user_path(@user) %></li>
+      <% end %>
+      <li> <%= link_to "Houses", houses_path  %></li>
+      <li> <%= link_to "Agents", agents_path %></li>
+      <li> <% if @current_user %>
+       <%= form_tag "/logout", method: :delete do %>
+       <%= submit_tag "Logout" %>
+       <% end %>
+      <!-- If not logged in, show login -->
+      <% else %>
+        <%= link_to "Login", new_login_path %>
+      <% end %> </li>
+    </ul>
+
+    </div>
+    </nav>
+    </header>
+   
     <%= yield %>
+    </div>
+    </div>
+  </div>
+
   </body>
 </html>

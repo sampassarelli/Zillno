@@ -1,4 +1,5 @@
 class HousesController < ApplicationController
+  skip_before_action :authorization, only: [:index]
 
     def 
       def index

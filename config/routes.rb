@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  root to:'houses#index'
   
   resources :tours, except: [:index]
   resources :offers, only: [:show, :new, :create]
@@ -11,11 +10,11 @@ Rails.application.routes.draw do
   resources :users, except: [:index]
   resources :agents, only: [:index, :show]
   
+  root to:'houses#index'
 
-  delete '/sessions/page_reset', to: 'sessions#page_reset', as: 'page_reset'
-  delete '/sessions/logout', to: 'sessions#logout', as: 'logout'
-  get '/sessions/new', to: 'sessions#new', as: 'new_login'
-  post '/sessions', to: 'sessions#create', as: 'login'
+  delete '/logout', to: 'sessions#destroy', as: 'logout'
+  get '/login', to: 'sessions#new', as: 'new_login'
+  post '/login', to: 'sessions#create', as: 'login'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
