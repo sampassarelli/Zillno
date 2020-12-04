@@ -1,0 +1,22 @@
+<body>
+<div  style="text-align: center">
+<% if flash[:error] %>
+      <%= flash[:error] %>
+    <% end %>
+</div>
+
+
+<h1 style="text-align: center"> User Login </h1>
+<div style="text-align: center">
+  <%= form_for :session, url: login_path do |f| %>
+    
+      <%= f.label :user_name %><br>
+      <%= f.text_field :user_name %><br>
+    <br>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %><br>
+<br>
+    <%= f.submit :login%>
+  <% end %>
+</div>
+</body>
