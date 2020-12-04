@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
     def show
         find_user
+        @houses = House.all
     end 
 
     def new 

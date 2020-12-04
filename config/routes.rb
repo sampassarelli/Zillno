@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
 
   resources :houses do
-    resources :house_reviews
-    resources :offers
-    resources :tours
+    resources :house_reviews, only: [:create]
+    resources :offers, only: [:create]
+    resources :tours, only: [:create]
   end
 
-  resources :offers
-  resources :tours
-  resources :house_reviews
+  # resources :offers
   resources :users, except: [:index]
   resources :agents, only: [:index, :show]
   

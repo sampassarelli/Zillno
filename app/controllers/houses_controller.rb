@@ -12,6 +12,9 @@ class HousesController < ApplicationController
 
     @offer = Offer.new
     @offers = @house.offers
+
+    @tour = Tour.new
+    @tours = @house.tours
   end
   
   def new 
@@ -19,7 +22,13 @@ class HousesController < ApplicationController
   end
 
   def create
-    
+    merged_params = house_params.merge({:seller_id => current_user.id})
+    @house = House.create(merged_params)    
+    if @house.valid?
+      redirect_to house_path(@house)
+    else
+      render :new
+    end
   end
   
   def edit

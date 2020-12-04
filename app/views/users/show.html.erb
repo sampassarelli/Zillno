@@ -1,10 +1,15 @@
-<h1>show user</h1>
+<h1>Hello, <%= @user.name %></h1>
 
-Hello, <%= @user.name %><br>
+<%= link_to "Edit Profile", edit_user_path %><br>
 
 <img src=<%= @user.img_url%> alt="profile picture" width="250" height="250"><br>
 
 
 <%= @user.user_name %>
 
-<%= link_to "Edit Profile", edit_user_path %>
+<h3>Your House Listings:</h3>
+<% @user.houses.each do |house| %>
+    <%= link_to house.address, house_path(house) %>
+    <br>
+<% end %>
+<br>

@@ -1,0 +1,5 @@
+<h3>Recent Tours:</h3>
+<% @tours.each do |tour| %>
+    Date: <%= tour.date %> // Time: <%= tour.time%> | Agent: <%= tour.agent.full_name %>
+    <br>
+<% end %>

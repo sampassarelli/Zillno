@@ -5,6 +5,4 @@ class House < ApplicationRecord
 
     belongs_to :seller, :class_name => "User"
     belongs_to :agent
-
-    has_one :purchase
 end

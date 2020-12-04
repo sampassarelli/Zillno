@@ -2,21 +2,14 @@ class HouseReviewsController < ApplicationController
     
     def create
         @house = House.find(params[:house_id])
-        @house_review = @house.house_reviews.create(house_review_params)
+        merged_params = house_review_params.merge({:buyer_id => current_user.id})
+  
+        @house_review = @house.house_reviews.create(merged_params)
         if @house_review.valid?
             redirect_to @house
         end
-       
     end
 
-
-    def edit
-        find_house_review
-    end
-
-    def update
-    
-    end
 
     def destroy
        find_house_review.destroy

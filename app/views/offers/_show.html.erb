@@ -1,6 +1,6 @@
+  <h3>Recent Offers!</h3>
 <% @offers.each do |offer| %>
-    <h3>Recent Offers!</h3><br>
-    <%= link_to "Make an offer!", new_offer_path %><br>
+    Offer: $<%= offer.amount %> | Agent: <%= offer.agent.full_name %>
     <br>
-    $<%= offer.amount %>
 <% end %>
+

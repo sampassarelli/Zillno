@@ -1,0 +1,9 @@
+<h4>Submit an Offer:</h4>
+<%= form_for ([@house, @offer]) do |f| %>
+        <%= f.label "Offer Amount:" %>
+        <%= f.number_field :amount%>
+        <%= f.label :agent_id %>
+        <%= f.collection_select :agent_id, Agent.all, :id, :full_name %>
+        
+        <%= f.submit %>
+<% end %>

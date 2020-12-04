@@ -1,26 +1,28 @@
 class OffersController < ApplicationController
 
-    def show 
-        @offer = Offer.find(params[:id])
-    end
-
-    def new 
-        @offer = Offer.new
-    end
-
+  
     def create 
         @house = House.find(params[:house_id])
-        @offer = @house.offers.create(offers_params)
-        
-        if @offer.save
-            redirect_to root_path
-        end
+        merged_params = offer_params.merge({:buyer_id => current_user.id})
+  
+        @offer = @house.offers.create(merged_params)
+        if @offer.valid?
+            redirect_to @house
+        end  
     end
+
+    def destroy 
+        find_offer.destroy
+    end
+
 
     private 
 
-    def offers_params
-        params.require(:offer).permit(:amount)
+    def offer_params
+        params.require(:offer).permit(:amount, :agent_id)
     end
 
+    def find_offer
+        @offer = Offer.find(params[:id])
+    end
 end

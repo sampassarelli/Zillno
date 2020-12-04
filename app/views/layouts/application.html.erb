@@ -29,6 +29,7 @@
       <li> <%= link_to "Profile", user_path(@user) %></li>
       <% end %>
       <li> <%= link_to "Houses", houses_path  %></li>
+      <li> <%= link_to "Sell Your House!", new_house_path  %></li>
       <li> <%= link_to "Agents", agents_path %></li>
       <li> <% if @current_user %>
        <%= form_tag "/logout", method: :delete do %>
