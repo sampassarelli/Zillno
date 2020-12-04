@@ -2,6 +2,6 @@
 
 <% @houses.each do |house|%>
    <img src= <%=house.picture%> alt="house picture" width="375" height="250"><br>
-   <%= house.address %><br>
+   <%= link_to house.address, house_path(house) %><br>
    Beds: <%= house.bedrooms %> |  Baths: <%= house.bathrooms %><br>
 <% end%>
