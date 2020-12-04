@@ -10,7 +10,7 @@
 <% if @user.houses.any? %>
         <h3>Your House Listings:</h3>
         <% @user.houses.each do |house| %>
-            <%= link_to house.address, house_path(house) %> || <%= link_to "Edit Listing", edit_house_path %>|| <%= link_to "Delete Listing", house_path(house), method: :delete, data: { confirm: "Are you sure?" } %><br>
+            <%= link_to house.address, house_path(house) %> || <%= link_to "Edit Listing", edit_house_path(house) %>|| <%= link_to "Delete Listing", house_path(house), method: :delete, data: { confirm: "Are you sure?" } %><br>
             <br>
         <% end %>
     <% end %>
