@@ -1,31 +1,39 @@
-<h4>Sell your house!</h4>
-<% if flash[:house_errors] %>
-    <% flash[:house_errors].each do |error| %>
-        <div style="color: red"><%= error %></div>
-        <% end %>
-<% end %>
 
-<%= form_for (@house) do |f| %>
-    <%= f.label :address %>
-    <%= f.text_field :address%><br>
-    <br>
-    <%= f.label :price %>
-    <%= f.number_field :price%><br>
-    <br>
-    <%= f.label :agent_id %>
-    <%= f.collection_select :agent_id, Agent.all, :id, :full_name, prompt: true%><br>
-    <br>
-    <%= f.label :bedrooms %>
-    <%= f.number_field :bedrooms%><br>
-    <br>
-    <%= f.label :bathrooms %>
-    <%= f.number_field :bathrooms, :step => "0.25"%><br>
-    <br>
-    <%= f.label :description %>
-    <%= f.text_area :description%><br>
-    <br>
-    <%= f.label "Image URL" %>
-    <%= f.text_area :picture%><br>
-    <br>
-    <%= f.submit %>
-<% end %>
+<div  class="container">
+    <h4>Sell your house!</h4>
+    <%= form_for (@house) do |f| %>
+        <%= f.label :address %>
+        <%= f.text_field :address%><br>
+        <br>
+        <%= f.label :price %>
+        <%= f.number_field :price%><br>
+        <br>
+        <%= f.label :agent_id %>
+        <%= f.collection_select :agent_id, Agent.all, :id, :full_name, prompt: true%><br>
+        <br>
+        <%= f.label :bedrooms %>
+        <%= f.number_field :bedrooms%><br>
+        <br>
+        <%= f.label :bathrooms %>
+        <%= f.number_field :bathrooms, :step => "0.25"%><br>
+        <br>
+        <%= f.label :description %>
+        <%= f.text_area :description%><br>
+        <br>
+        <%= f.label "Image URL" %>
+        <%= f.text_area :picture%><br>
+        <br>
+        <%= f.submit "List it!" %>
+    <% end %>
+
+</div>
+
+
+<div  class="container">
+
+    <% if flash[:house_errors] %>
+        <% flash[:house_errors].each do |error| %>
+            <div class="alert alert-danger" role="alert"><%= error %></div>
+            <% end %>
+    <% end %>
+</div>

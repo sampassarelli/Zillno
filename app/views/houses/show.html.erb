@@ -1,47 +1,49 @@
-<h1><%= @house.address %></h1>
-<% if @current_user.id == @house.seller.id%>
-<%= link_to "Edit Listing", edit_house_path %><br>
-<% else %>
-<% end %>
+<div  class="container">
+    <h1 class="display-5"><%= @house.address %></h1>
+    <% if @current_user.id == @house.seller.id%>
+    <%= link_to "Edit Listing", edit_house_path %><br>
+    <% else %>
+    <% end %>
 
-<% if @house.picture.blank?%>
-    <%= image_tag("no_image_found_house.png") %>
-<% else%>
-    <img src= <%=@house.picture%> alt="house picture" width="375" height="250"><br>
-<% end %>
+    <% if @house.picture == nil%>
+        <%= image_tag("no_image_found_house.png") %>
+    <% else%>
+        <img src= <%=@house.picture%> alt="house picture" width="375" height="250"><br>
+    <% end %>
 
-<br>
-<h3>Agent:</h3>
-<%= @house.agent.full_name %><br>
-<br>
-<h3>Price:</h3>
-$<%= @house.price %><br>
-<br>
-<h3>Address:</h3>
-<%= @house.address %><br>
-<br>
-<h3>Bedrooms:</h3>
-<%= @house.bedrooms %><br>
-<br>
-<h3>Bathrooms:</h3>
-<%= @house.bathrooms %><br>
-<br>
-<h3>Description:</h3>
-<%= @house.description %><br>
+    
+    <br>
+    <h3>Agent:</h3>
+    <%= @house.agent.full_name %><br>
+    <br>
+    <h3>Price:</h3>
+    $<%= @house.price %><br>
+    <br>
+    <h3>Address:</h3>
+    <%= @house.address %><br>
+    <br>
+    <h3>Bedrooms:</h3>
+    <%= @house.bedrooms %><br>
+    <br>
+    <h3>Bathrooms:</h3>
+    <%= @house.bathrooms %><br>
+    <br>
+    <h3>Description:</h3>
+    <%= @house.description %><br>
 
 
-<br>
-<%= render 'tours/new' %><br>
-<br>
-<%= render 'tours/show' %><br>
-<br>
-<%= render 'offers/new' %><br>
-<br>
-<%= render 'offers/show' %><br>
-<br>
-<%= render 'house_reviews/new' %>
-<br>
-<%= render 'house_reviews/show' %><br>
-<h3> <%= link_to 'Back', houses_path %></h3>
-
+    <br>
+    <%= render 'tours/new' %><br>
+    <br>
+    <%= render 'tours/show' %><br>
+    <br>
+    <%= render 'offers/new' %><br>
+    <br>
+    <%= render 'offers/show' %><br>
+    <br>
+    <%= render 'house_reviews/new' %>
+    <br>
+    <%= render 'house_reviews/show' %><br>
+    <h3> <%= link_to 'Back', houses_path %></h3>
+</div>
 
