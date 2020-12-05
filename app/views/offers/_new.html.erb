@@ -1,3 +1,9 @@
+<% if flash[:offer_errors] %>
+    <% flash[:offer_errors].each do |error| %>
+        <div style="color: red"><%= error %></div>
+        <% end %>
+<% end %>
+
 <% if @current_user.id == @house.seller.id%>
 
 <% else%>
@@ -6,7 +12,7 @@
                 <%= f.label "Offer Amount:" %>
                 <%= f.number_field :amount%>
                 <%= f.label :agent_id %>
-                <%= f.collection_select :agent_id, Agent.all, :id, :full_name %>
+                <%= f.collection_select :agent_id, Agent.all, :id, :full_name, prompt: true %>
                 
                 <%= f.submit %>
         <% end %>

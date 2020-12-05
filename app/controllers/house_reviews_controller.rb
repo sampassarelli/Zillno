@@ -7,6 +7,9 @@ class HouseReviewsController < ApplicationController
         @house_review = @house.house_reviews.create(merged_params)
         if @house_review.valid?
             redirect_to @house
+        else 
+            flash[:review_errors] = @house_review.errors.full_messages
+            redirect_to house_path(@house)
         end
     end
 

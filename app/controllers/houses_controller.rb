@@ -27,7 +27,7 @@ class HousesController < ApplicationController
     if @house.valid?
       redirect_to house_path(@house)
     else
-      flash[:my_errors] = @house.errors.full_messages
+      flash[:house_errors] = @house.errors.full_messages
       redirect_to new_house_path
     end
   end
@@ -42,7 +42,7 @@ class HousesController < ApplicationController
     if find_house.update(merged_params)
       redirect_to house_path(@house)
     else 
-      flash[:my_errors] = @house.errors.full_messages
+      flash[:house_errors] = @house.errors.full_messages
       redirect_to edit_house_path
     end
   end

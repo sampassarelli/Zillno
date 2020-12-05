@@ -7,6 +7,9 @@ class ToursController < ApplicationController
         @tour = @house.tours.create(merged_params)
         if @tour.valid?
             redirect_to @house
+        else 
+            flash[:tour_errors] = @tour.errors.full_messages
+            redirect_to house_path(@house)
         end  
     end
 

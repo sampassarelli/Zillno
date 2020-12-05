@@ -15,7 +15,12 @@
 <br>
 <h3>House Listings:</h3>
 <% @agent.houses.each do |house| %>
+
+<% if house.picture.blank?%>
+    <%= image_tag("no_image_found_house.png") %>
+<% else%>
     <img src= <%= house.picture %> alt="house picture" width="200" height="150"><br>
+<% end %><br>
     <%= house.address %>
 <% end %>
 <br>

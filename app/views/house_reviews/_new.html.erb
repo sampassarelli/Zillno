@@ -1,6 +1,14 @@
+<% if flash[:review_errors] %>
+    <% flash[:review_errors].each do |error| %>
+        <div style="color: red"><%= error %></div>
+        <% end %>
+<% end %>
+
+
 <% if @current_user.id == @house.seller.id%>
 Can't make offer on your listing.
 <% else%>
+
   <%= form_for ([@house, @house_review]) do |f| %>
     <%= f.label :title %><br>
     <%= f.text_field :title %><br>

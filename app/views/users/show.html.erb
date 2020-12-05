@@ -1,10 +1,12 @@
 <h1>Hello, <%= @user.name %></h1>
 
 <%= link_to "Edit Profile", edit_user_path %>
-            
-
-<img src=<%= @user.img_url%> alt="profile picture" width="250" height="250"><br>
-
+<br>
+<% if @user.img_url.blank?%>
+    <%= image_tag "profile_pic.png" %>
+<% else%>
+    <img src=<%= @user.img_url%> alt="profile picture" width="250" height="250"><br>
+<% end %><br>
 
 <%= @user.user_name %>
 <% if @user.houses.any? %>

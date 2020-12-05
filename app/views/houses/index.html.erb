@@ -1,7 +1,13 @@
 <h1>House Index</h1>
 
 <% @houses.each do |house|%>
-   <%= link_to image_tag(house.picture, size: "375x250"), house_path(house) %><br>
+
+<% if house.picture.blank?%>
+    <%= link_to image_tag("no_image_found_house.png"), house_path(house)%><br>
+<% else%>
+    <%= link_to image_tag(house.picture, size: "375x250"), house_path(house) %><br>
+<% end %>
+
    <%= house.address%><br>
    Beds: <%= house.bedrooms %> |  Baths: <%= house.bathrooms %><br>
 <% end%>

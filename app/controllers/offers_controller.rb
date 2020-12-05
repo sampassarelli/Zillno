@@ -8,6 +8,9 @@ class OffersController < ApplicationController
         @offer = @house.offers.create(merged_params)
         if @offer.valid?
             redirect_to @house
+        else 
+            flash[:offer_errors] = @offer.errors.full_messages
+            redirect_to house_path(@house)
         end  
     end
 

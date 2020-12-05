@@ -3,7 +3,13 @@
 <%= link_to "Edit Listing", edit_house_path %><br>
 <% else %>
 <% end %>
-<img src= <%=@house.picture%> alt="house picture" width="375" height="250"><br>
+
+<% if @house.picture.blank?%>
+    <%= image_tag("no_image_found_house.png") %>
+<% else%>
+    <img src= <%=@house.picture%> alt="house picture" width="375" height="250"><br>
+<% end %>
+
 <br>
 <h3>Agent:</h3>
 <%= @house.agent.full_name %><br>
