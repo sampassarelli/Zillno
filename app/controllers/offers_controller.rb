@@ -11,18 +11,10 @@ class OffersController < ApplicationController
         end  
     end
 
-    def destroy 
-        find_offer.destroy
-    end
-
-
     private 
 
     def offer_params
         params.require(:offer).permit(:amount, :agent_id)
     end
-
-    def find_offer
-        @offer = Offer.find(params[:id])
-    end
+    
 end

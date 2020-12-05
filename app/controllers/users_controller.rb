@@ -35,11 +35,6 @@ class UsersController < ApplicationController
         end
     end
 
-    def destroy 
-        find_user.destroy
-        redirect_to root_path
-    end
-
     private 
 
     def find_user

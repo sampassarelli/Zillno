@@ -8,5 +8,8 @@ class User < ApplicationRecord
     has_many :agents, through: :houses, dependent: :destroy
 
     has_secure_password
+
+    validates :name, :user_name, :email, presence: true
+    validates :user_name, uniqueness: true
     
 end

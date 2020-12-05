@@ -4,9 +4,16 @@ Can't make offer on your listing.
   <%= form_for ([@house, @house_review]) do |f| %>
     <%= f.label :title %><br>
     <%= f.text_field :title %><br>
-      <br>
+    <br>
+    <%= f.label :toured %>
+    <%= f.label "Yes" %>
+    <%= f.radio_button :toured, "Y" %>
+    <%= f.label "No" %>
+    <%= f.radio_button :toured, "N" %>
+    <br>
     <%= f.label "Your Review" %><br>
     <%= f.text_area :content %>
+    
 
       <br>
     <%= f.submit %>

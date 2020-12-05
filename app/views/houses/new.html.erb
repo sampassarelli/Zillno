@@ -1,4 +1,10 @@
 <h4>Sell your house!</h4>
+<% if flash[:my_errors] %>
+    <% flash[:my_errors].each do |error| %>
+        <div style="color: red"><%= error %></div>
+        <% end %>
+<% end %>
+
 <%= form_for (@house) do |f| %>
     <%= f.label :address %>
     <%= f.text_field :address%><br>

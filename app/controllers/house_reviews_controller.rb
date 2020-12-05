@@ -10,20 +10,9 @@ class HouseReviewsController < ApplicationController
         end
     end
 
-
-    def destroy
-       find_house_review.destroy
-    end
-
-    
     private 
 
     def house_review_params
         params.require(:house_review).permit(:title, :content)
     end
-
-    def find_house_review
-        @house_review = HouseReview.find(params[:id])
-    end
-
 end

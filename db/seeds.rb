@@ -65,11 +65,11 @@ Tour.create(agent_id: ryan.id, buyer_id: muhidin.id, house_id: house5.id, date: 
 
 puts "Creating Reviews..."
 
-HouseReview.create(buyer_id: sam.id, house_id: house1.id, title: "Awesome house!", content: "No problems with house!")
-HouseReview.create(buyer_id: rakshan.id, house_id: house2.id, title: "Terrible house!", content: "Foundation cracked.")
-HouseReview.create(buyer_id: dena.id, house_id: house3.id, title: "Too expensive!", content: "Overpriced per square foot.")
-HouseReview.create(buyer_id: max.id, house_id: house4.id, title: "Good house, bad yard", content: "House is fantastic and newly remodeled but yard is terrible.")
-HouseReview.create(buyer_id: muhidin.id, house_id: house5.id, title: "Good potential house", content: "House has good bones, need minor renovations.")
+HouseReview.create(buyer_id: sam.id, house_id: house1.id, title: "Awesome house!", content: "No problems with house!", toured:"Y")
+HouseReview.create(buyer_id: rakshan.id, house_id: house2.id, title: "Terrible house!", content: "Foundation cracked.", toured:"Y")
+HouseReview.create(buyer_id: dena.id, house_id: house3.id, title: "Too expensive!", content: "Overpriced per square foot.", toured:"N")
+HouseReview.create(buyer_id: max.id, house_id: house4.id, title: "Good house, bad yard", content: "House is fantastic and newly remodeled but yard is terrible.", toured:"Y")
+HouseReview.create(buyer_id: muhidin.id, house_id: house5.id, title: "Good potential house", content: "House has good bones, need minor renovations.", toured: "N")
 
 
 # if @house_review.valid?

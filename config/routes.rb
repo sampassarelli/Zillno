@@ -6,8 +6,7 @@ Rails.application.routes.draw do
     resources :tours, only: [:create]
   end
 
-  # resources :offers
-  resources :users, except: [:index]
+  resources :users, except: [:index, :delete]
   resources :agents, only: [:index, :show]
   
   root to:'houses#index'
