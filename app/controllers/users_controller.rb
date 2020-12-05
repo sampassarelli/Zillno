@@ -34,7 +34,7 @@ class UsersController < ApplicationController
             redirect_to edit_user_path
         end
     end
-
+#test
     private 
 
     def find_user
