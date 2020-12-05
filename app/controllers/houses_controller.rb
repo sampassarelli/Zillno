@@ -6,6 +6,7 @@ class HousesController < ApplicationController
   end
 
   def show
+    @google =  google_map
     find_house
     @house_review = HouseReview.new
     @house_reviews = @house.house_reviews
@@ -62,5 +63,11 @@ class HousesController < ApplicationController
   def find_house
     @house = House.find(params[:id])
   end
+
+  def google_map(center)
+        "https://maps.googleapis.com/maps/api/staticmap?center=#{center}&size=300x300&zoom=17"
+  end
+
+  
       
 end
