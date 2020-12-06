@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, except: [:index, :delete]
   resources :agents, only: [:index, :show]
   
-  root to:'houses#index'
+  root to:'sessions#index'
 
   delete '/logout', to: 'sessions#destroy', as: 'logout'
   get '/login', to: 'sessions#new', as: 'new_login'

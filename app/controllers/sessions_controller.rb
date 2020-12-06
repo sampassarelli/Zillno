@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
     skip_before_action :authorization, only: [:new, :create]
 
+    def index 
+        render "homepage/home"
+    end
+
     def new
     end 
 
