@@ -6,7 +6,6 @@ class HousesController < ApplicationController
   end
 
   def show
-    @google =  google_map
     find_house
     @house_review = HouseReview.new
     @house_reviews = @house.house_reviews
@@ -57,17 +56,11 @@ class HousesController < ApplicationController
   private 
 
   def house_params 
-    params.require(:house).permit(:address, :price, :seller_id, :agent_id, :bedrooms, :bathrooms, :description, :picture)
+    params.require(:house).permit(:address, :latitude, :longitude, :price, :seller_id, :agent_id, :bedrooms, :bathrooms, :description, :picture)
   end
 
   def find_house
     @house = House.find(params[:id])
   end
-
-  def google_map(center)
-        "https://maps.googleapis.com/maps/api/staticmap?center=#{center}&size=300x300&zoom=17"
-  end
-
-  
       
 end

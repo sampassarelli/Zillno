@@ -9,6 +9,7 @@
 <% else%>
     <img src= <%=@house.picture%> alt="house picture" width="375" height="250"><br>
 <% end %>
+<%= image_tag @house.google_map(center: @house.address) %>
 
 <br>
 <h3>Agent:</h3>
@@ -29,7 +30,7 @@ $<%= @house.price %><br>
 <h3>Description:</h3>
 <%= @house.description %><br>
 
- <%= image_tag @google(center: house.address%>
+ 
 
 
 <br>
