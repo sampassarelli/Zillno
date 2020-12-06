@@ -58,3 +58,5 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 gem 'date'
 
 gem 'geocoder'
+
+gem 'bootstrap', '~> 4.5.3'
