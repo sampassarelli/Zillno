@@ -18,7 +18,7 @@ class House < ApplicationRecord
    
 
     def google_map(center)
-        "https://maps.googleapis.com/maps/api/staticmap?markers=color:red%7label:C%7Ccenter=#{center}&size=500x500&zoom=17&key=#{Rails.application.credentials.google_maps_api_key}"
+        "https://maps.googleapis.com/maps/api/staticmap?markers=color:red%7label:C%7Ccenter=#{center}&size=500x500&zoom=17&key=#{Rails.application.credentials.google}"
     end
 
 end

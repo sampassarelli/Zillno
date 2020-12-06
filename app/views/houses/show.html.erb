@@ -16,7 +16,7 @@
 <%= @house.agent.full_name %><br>
 <br>
 <h3>Price:</h3>
-$<%= @house.price %><br>
+$<%= number_with_delimiter(@house.price, :delimiter => ',') %><br> 
 <br>
 <h3>Address:</h3>
 <%= @house.address %><br>
