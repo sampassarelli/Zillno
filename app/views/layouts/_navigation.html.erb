@@ -1,0 +1,30 @@
+<nav class="navbar navbar-dark navbar-static-top navbar-expand-md">
+    <div class="container">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
+        </button> <%= link_to "Zillno", root_path, class: 'navbar-brand' %>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav mr-auto">
+
+    <% if session[:user_id] %>
+        <% @user = User.find(session[:user_id]) %>
+        <li class='nav-item'><%= link_to 'Profile', user_path(@user), class: 'nav-link' %></li>
+    <% end %>
+        <li class='nav-item'><%= link_to 'Houses', houses_path, class: 'nav-link' %></li>
+        <li class='nav-item'><%= link_to 'Sell your House!', new_house_path, class: 'nav-link' %></li>
+        <li class='nav-item'><%= link_to 'Agents', agents_path, class: 'nav-link' %></li>
+        <li> <% if @current_user %>
+                <%= form_tag "/logout", method: :delete do %>
+                <li class='nav-item'><%= submit_tag "Logout", class: 'nav-link' %></li>
+            <% end %>
+      <!-- If not logged in, show login -->
+            <% else %>
+                <li class='nav-item'><%= link_to "Login", new_login_path,  class: 'nav-link' %></li>
+            <% end %> </li>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
