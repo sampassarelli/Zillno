@@ -3,7 +3,7 @@
         
 <% else %>
         <h4>Book a Tour:</h4>
-                 <%= form_for ([@house, @tour]) do |f| %>
+        <%= form_for ([@house, @tour]) do |f| %>
                 <%= f.label :date %>
                 <%= f.date_field :date%>
 

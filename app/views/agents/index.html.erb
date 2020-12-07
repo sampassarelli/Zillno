@@ -1,12 +1,25 @@
-<h1>Agents!</h1>
 
-<% @agents.each do |agent| %>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Meet Our Team!</h1>
+    <p class="lead">Our agents are completely made up and have no experience. They do not even have contact information. Goodluck getting ahold of them! </p>
+  </div>
+</div>
 
-    <img src=<%= agent.picture %> alt="agent" width="75" height="75"><br>
-    <%= link_to agent.full_name, agent_path(agent) %> | Years of Experience: <%= agent.years_experience %> <br>
-    <%= agent.bio %><br>
-    <br>
- 
-
-    <% end %>
-
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3">
+        <% @agents.each do |agent| %>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src=<%= agent.picture %> alt="agent" width="350" height="300"><br>
+            <div class="card-body">
+                <h5 class="card-title"> <%= link_to agent.full_name, agent_path(agent) %> </h5>
+                <p class="card-title">Years of Experience: <%= agent.years_experience %> <br></p>
+                <p class="card-title"><%= agent.bio %> <br></p>
+            </div>
+            </div>  
+        </div>
+        <% end %>
+    </div>
+</div>
+</div>

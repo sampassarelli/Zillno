@@ -37,11 +37,15 @@ $<%= number_with_delimiter(@house.price, :delimiter => ',') %><br>
 <br>
 <%= render 'tours/new' %><br>
 <br>
+<div data-spy="scroll" data-offset="0">
 <%= render 'tours/show' %><br>
+</div>
 <br>
 <%= render 'offers/new' %><br>
 <br>
+<div data-spy="scroll" data-offset="50">
 <%= render 'offers/show' %><br>
+</div>
 <br>
 <%= render 'house_reviews/new' %>
 <br>

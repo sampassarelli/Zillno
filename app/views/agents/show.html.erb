@@ -1,27 +1,30 @@
-<h1><%= @agent.full_name %></h1>
-<img src= <%=@agent.picture%> alt="agent picture" width="375" height="250"><br>
-<br>
-<h3>Years of Experience:</h3>
-<%= @agent.years_experience %><br>
-<br>
-<h3>About Me!</h3>
-<%= @agent.bio %><br>
-<br>
-<h3>Scheduled Tours:</h3>
-<% @agent.tours.each do |tour| %>
-    <img src= <%= tour.house.picture %> alt="house picture" width="200" height="150"><br>
-    <%= tour.house.address %> || (<%= tour.date %>) <%= tour.time %><br>
-<% end %>
-<br>
-<h3>House Listings:</h3>
-<% @agent.houses.each do |house| %>
 
-<% if house.picture.blank?%>
-    <%= image_tag("no_image_found_house.png") %>
-<% else%>
-    <img src= <%= house.picture %> alt="house picture" width="200" height="150"><br>
-<% end %><br>
-    <%= house.address %>
-<% end %>
-<br>
 
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 img">
+        <img src=<%= @agent.picture%> alt="" class="img-rounded"><br>
+    </div>
+    <div class="col-md-6 details">
+      <blockquote>
+        <h5><%= @agent.full_name %>!</h5>
+      </blockquote>
+      <p>
+        Years Experience:<%= @agent.years_experience %> <br>
+        About:<%= @agent.bio %> <br>
+      </p>
+     <br>    
+        <h5>Agent's Listings:</h5>
+        <% @agent.houses.each do |house| %>
+            <%= link_to house.address, house_path(house) %> <br>
+        <% end %>
+        <h3>Scheduled Tours:</h3>
+            <% @agent.tours.each do |tour| %>
+                <%= link_to tour.house.address, house_path(tour.house) %><br>
+                <%= tour.date %> <%= tour.time %><br>
+            <% end %>
+        <br>
+    </div>
+  </div>
+</div>
