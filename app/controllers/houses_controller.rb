@@ -56,7 +56,7 @@ class HousesController < ApplicationController
   private 
 
   def house_params 
-    params.require(:house).permit(:address, :price, :seller_id, :agent_id, :bedrooms, :bathrooms, :description, :picture)
+    params.require(:house).permit(:address, :latitude, :longitude, :price, :seller_id, :agent_id, :bedrooms, :bathrooms, :description, :picture)
   end
 
   def find_house

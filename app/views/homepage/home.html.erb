@@ -1,0 +1,82 @@
+<div class="container">
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag("House_logo.png", class: "d-block w-100")%>
+    </div>
+    <div class="container">
+          <div class="carousel-caption text-left">
+            <h1>Welcome to Zillno.</h1>
+            <h3>Making home buying more transparent!</h3>
+            <p><%= link_to "Sign Up Today", new_user_path, class: "btn btn-lg btn-primary" %></p>
+          </div>
+        </div>
+    <div class="carousel-item">
+      <%= image_tag("House2.png", class: "d-block w-100")%>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("House3.png", class: "d-block w-100")%>
+    </div>
+  </div>
+  </div>
+
+
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Review Homes You've Toured.</h2>
+        <h2 class="text-muted">Be in the Know!</h2>
+        <p class="lead">Know what others have noticed during homes tours you may have overlooked or want to know before placing an offer. Full transparency is he main goal of Zillno and providing other buyers and agent reviews can help someone find the house of their dreams or avoid disasters!</p>
+      </div>
+      <div class="col-md-5">
+        <%= image_tag("leaving_review.png", class: "bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto", size: "500X500")%>
+        
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Book a Showing With Our Agents!</h2>
+        <h2 class="text-muted">See Who Else Is Interested. </h2>
+        <p class="lead">Zillno provides the ability to book a tour of the home you are interested in. Just visit your desired home's page and book from there! We also provide the ability to see how many other tours that house has had. See if you will have to act fast to book a tour so you don't lose out on your dream home! Again, transparency is key!  </p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <%= image_tag("tour_image.png", class: "bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto", size: "500X500")%>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">List Your House on Zillno!</h2>
+        <h2 class="text-muted">Sell With Our Experienced Agents.</h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5">
+        <%= image_tag("sold_house.png", class: "bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto", size: "500X500")%>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div>

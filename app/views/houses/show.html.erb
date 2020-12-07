@@ -9,13 +9,14 @@
 <% else%>
     <img src= <%=@house.picture%> alt="house picture" width="375" height="250"><br>
 <% end %>
+<%= image_tag @house.google_map(center: @house.address) %>
 
 <br>
 <h3>Agent:</h3>
 <%= @house.agent.full_name %><br>
 <br>
 <h3>Price:</h3>
-$<%= @house.price %><br>
+$<%= number_with_delimiter(@house.price, :delimiter => ',') %><br> 
 <br>
 <h3>Address:</h3>
 <%= @house.address %><br>
@@ -28,6 +29,8 @@ $<%= @house.price %><br>
 <br>
 <h3>Description:</h3>
 <%= @house.description %><br>
+
+ 
 
 
 <br>

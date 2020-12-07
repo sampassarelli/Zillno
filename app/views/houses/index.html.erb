@@ -1,13 +1,14 @@
-<h1>House Index</h1>
+<hr>
+<div class="container">
+    <% @houses.each do |house|%>
 
-<% @houses.each do |house|%>
-
-<% if house.picture.blank?%>
-    <%= link_to image_tag("no_image_found_house.png"), house_path(house)%><br>
-<% else%>
-    <%= link_to image_tag(house.picture, size: "375x250"), house_path(house) %><br>
-<% end %>
-
-   <%= house.address%><br>
-   Beds: <%= house.bedrooms %> |  Baths: <%= house.bathrooms %><br>
-<% end%>
+    <% if house.picture.blank?%>
+        <%= link_to image_tag("no_image_found_house.png"), house_path(house)%><br>
+    <% else%>
+        <%= link_to image_tag(house.picture, size: "375x250"), house_path(house) %><br>
+    <% end %>
+        <%= house.address%><br>
+        Beds: <%= house.bedrooms %> |  Baths: <%= house.bathrooms %><br>
+        Price: $<%= number_with_delimiter(house.price, :delimiter => ',') %><br>
+    <% end%>
+</div>
