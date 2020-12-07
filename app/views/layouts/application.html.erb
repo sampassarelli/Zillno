@@ -10,36 +10,34 @@
   </head>
   
   <body>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
-          <a class="navbar-brand" href="/">Zillno</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-             <%= link_to "Listings", houses_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Agents", agents_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Sell Your House!", new_house_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://magazine.realtor/daily-news">News</a>
-           </li>                     
-          </ul>
-           <li class="nav navbar-nav navbar-right">
-              <%= link_to "Login", new_login_path, class: "nav-link" %>
-            </li>
-            <li class="nav navbar-nav navbar-right">
-              <%= link_to "Sign Up", new_user_path, class: "nav-link" %>
-            </li>
-        
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+      <a class="navbar-brand" href="/">Zillno</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to "Listings", houses_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Agents", agents_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sell Your House!", new_house_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://magazine.realtor/daily-news">News</a>
+          </li>                     
+        </ul>
+          <li class="nav navbar-nav navbar-right">
+            <%= link_to "Login", new_login_path, class: "nav-link" %>
+          </li>
+          <li class="nav navbar-nav navbar-right">
+            <%= link_to "Sign Up", new_user_path, class: "nav-link" %>
+          </li>
       </div>
     </nav>
-
 
     <hr>
     <hr>     
