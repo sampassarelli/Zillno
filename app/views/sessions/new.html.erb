@@ -4,7 +4,9 @@
 <div  style="text-align: center">
 <div  style="text-align: center">
 <% if flash[:error] %>
-      <div style="color: red"><%= flash[:error] %></div>
+      <div class="container">
+      <div class="alert alert-danger" role="alert"><%= error %></div>
+      </div>
     <% end %>
 </div>
 </div>

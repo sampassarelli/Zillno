@@ -1,6 +1,7 @@
+<div class="container">
 <h1>Hello, <%= @user.name %></h1>
 
-<%= link_to "Edit Profile", edit_user_path %>
+<%= link_to "Edit Profile", edit_user_path, class: "btn btn-primary btn-sm" %><br>
 <br>
 <% if @user.img_url.blank?%>
     <%= image_tag "profile_pic.png" %>
@@ -8,7 +9,7 @@
     <img src=<%= @user.img_url%> alt="profile picture" width="250" height="250"><br>
 <% end %><br>
 
-<%= @user.user_name %>
+<h2>Username: <%= @user.user_name %></h2>
 <% if @user.houses.any? %>
         <h3>Your House Listings:</h3>
         <% @user.houses.each do |house| %>
@@ -17,3 +18,4 @@
         <% end %>
     <% end %>
 <br>
+</div>

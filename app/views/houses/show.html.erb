@@ -1,9 +1,10 @@
+<div class="container">
 <h1><%= @house.address %></h1>
 <% if @current_user.id == @house.seller.id%>
-<%= link_to "Edit Listing", edit_house_path %><br>
+<%= link_to "Edit Listing", edit_house_path, class: "btn btn-primary" %><br>
 <% else %>
 <% end %>
-
+<br>
 <% if @house.picture.blank?%>
     <%= image_tag("no_image_found_house.png") %>
 <% else%>
@@ -47,4 +48,4 @@ $<%= number_with_delimiter(@house.price, :delimiter => ',') %><br>
 <%= render 'house_reviews/show' %><br>
 <h3> <%= link_to 'Back', houses_path %></h3>
 
-
+</div>

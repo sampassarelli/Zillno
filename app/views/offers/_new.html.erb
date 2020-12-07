@@ -1,9 +1,3 @@
-<% if flash[:offer_errors] %>
-    <% flash[:offer_errors].each do |error| %>
-        <div style="color: red"><%= error %></div>
-        <% end %>
-<% end %>
-
 <% if @current_user.id == @house.seller.id%>
 
 <% else%>
@@ -15,5 +9,14 @@
                 <%= f.collection_select :agent_id, Agent.all, :id, :full_name, prompt: true %>
                 
                 <%= f.submit %>
+        <% end %>
+<% end %>
+<br>
+
+<% if flash[:offer_errors] %>
+    <% flash[:offer_errors].each do |error| %>
+        <div class="container">
+        <div class="alert alert-danger" role="alert"><%= error %></div>
+        </div>
         <% end %>
 <% end %>

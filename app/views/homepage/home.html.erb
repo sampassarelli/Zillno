@@ -1,6 +1,6 @@
 <div display: block;>
     
-<div class="container">
+
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -13,9 +13,16 @@
     </div>
     <div class="container">
           <div class="carousel-caption text-left">
-            <h1>Welcome to Zillno.</h1>
-            <h3>Making home buying more transparent!</h3>
-            <p><%= link_to "Sign Up Today", new_user_path, class: "btn btn-lg btn-primary" %></p>
+            <% if session[:user_id] %>
+            <% @user = User.find(session[:user_id]) %>
+            <h1>Welcome Back!</h1>
+            <h3>We appreciate your continued support!</h3>
+            <p><%= link_to "Find Your Home!", houses_path, class: "btn btn-lg btn-primary" %></p>
+            <% else %>
+              <h1>Welcome to Zillno.</h1>
+              <h3>Making home buying more transparent!</h3>
+              <p><%= link_to "Sign Up Today", new_user_path, class: "btn btn-lg btn-primary" %></p>
+            <% end %>
           </div>
         </div>
     <div class="carousel-item">
@@ -26,14 +33,10 @@
     </div>
   </div>
   </div>
-</div>
+
 
 
   <div class="container marketing">
-
-    <!-- Three columns of text below the carousel -->
-    
-
 
     <!-- START THE FEATURETTES -->
 

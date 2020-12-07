@@ -1,6 +1,41 @@
-<body>
-<h1 style="text-align: center"> Edit User Page </h1>
+<hr>
+<div  style="text-align: center">
+    <body>
+        
+        <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Eo_circle_blue_white_letter-z.svg/1024px-Eo_circle_blue_white_letter-z.svg.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Update Your Account</h1>
+        <%= form_for(@user) do |f| %>
+            <p><%= f.text_field :name, placeholder: "Name"  %></p>
 
 
-<%= render "form" %>
-</body>
+            <p><%= f.text_field :user_name, placeholder: "Username"  %></p>
+
+
+            <p><%= f.email_field :email, placeholder: "Email"  %></p>
+
+
+            <p><%= f.password_field :password, placeholder: "Password"  %></p>
+
+
+            <p><%= f.text_field :img_url, placeholder: "Profile Picture URL"  %></p>
+
+            <%= f.submit "Update", class: "btn btn-primary" %>
+
+             
+         
+        <% end %>
+        <br>
+        <div  style="text-align: center">
+            <div  style="text-align: center">
+                <% if flash[:user_errors] %>
+                    <% flash[:user_errors].each do |error| %>
+                    <div class="container">
+                    <div class="alert alert-danger" role="alert"><%= error %></div>
+                    </div>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+        <p class="mt-5 mb-3 text-muted">© 2020-2020</p>
+    </body>
+</div>

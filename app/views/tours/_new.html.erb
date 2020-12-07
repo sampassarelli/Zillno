@@ -1,8 +1,4 @@
-<% if flash[:tour_errors] %>
-    <% flash[:tour_errors].each do |error| %>
-        <div style="color: red"><%= error %></div>
-        <% end %>
-<% end%>
+
 <% if @current_user.id == @house.seller.id%>
         
 <% else %>
@@ -20,3 +16,11 @@
                 <%= f.submit %>
         <% end %>
 <% end %>
+<br>
+<% if flash[:tour_errors] %>
+    <% flash[:tour_errors].each do |error| %>
+        <div class="container">
+        <div class="alert alert-danger" role="alert"><%= error %></div>
+        </div>
+        <% end %>
+<% end%>
