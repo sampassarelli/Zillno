@@ -1,5 +1,8 @@
 <h3>Recent Tours:</h3>
 <% @tours.each do |tour| %>
-    Date: <%= tour.date %> // Time: <%= tour.time%> | Agent: <%= tour.agent.full_name %>
+    Date: <%= tour.date.strftime("%A, %b %d") %>  |  Time: <%= tour.time.strftime("%I:%M %p")%><br>
+    Agent: <%= tour.agent.full_name %>
     <br>
 <% end %>
+
+

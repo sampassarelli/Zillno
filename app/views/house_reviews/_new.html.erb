@@ -1,29 +1,24 @@
-<% if flash[:review_errors] %>
-    <% flash[:review_errors].each do |error| %>
-        <div style="color: red"><%= error %></div>
-        <% end %>
-<% end %>
-
-
 <% if @current_user.id == @house.seller.id%>
-Can't make offer on your listing.
+
 <% else%>
 
+<h3>Submit a Review!</h3>
   <%= form_for ([@house, @house_review]) do |f| %>
     <%= f.label :title %><br>
     <%= f.text_field :title %><br>
-    <br>
-    <%= f.label :toured %>
-    <%= f.label "Yes" %>
-    <%= f.radio_button :toured, "Y" %>
-    <%= f.label "No" %>
-    <%= f.radio_button :toured, "N" %>
+
     <br>
     <%= f.label "Your Review" %><br>
     <%= f.text_area :content %>
-    
-
       <br>
-    <%= f.submit %>
+    <%= f.submit "Submit Review!", class: "btn btn-primary btn-sm"%>
   <% end %>
+<% end %>
+<br>
+<% if flash[:review_errors] %>
+    <% flash[:review_errors].each do |error| %>
+     
+        <div class="alert alert-danger" role="alert"><%= error %></div>
+   
+        <% end %>
 <% end %>

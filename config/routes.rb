@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
   resources :houses do
-    resources :house_reviews, only: [:create]
-    resources :offers, only: [:create]
-    resources :tours, only: [:create]
+    resources :house_reviews, only: [:create, :delete]
+    resources :offers, only: [:create, :delete]
+    resources :tours, only: [:create, :delete]
   end
 
   resources :users, except: [:index, :delete]
-  resources :agents, only: [:index, :show]
+  resources :agents, only: [:index, :show, :delete]
   
   root to:'sessions#index'
 

@@ -1,14 +1,33 @@
-<hr>
-<div class="container">
-    <% @houses.each do |house|%>
 
-    <% if house.picture.blank?%>
-        <%= link_to image_tag("no_image_found_house.png"), house_path(house)%><br>
-    <% else%>
-        <%= link_to image_tag(house.picture, size: "375x250"), house_path(house) %><br>
-    <% end %>
-        <%= house.address%><br>
-        Beds: <%= house.bedrooms %> |  Baths: <%= house.bathrooms %><br>
-        Price: $<%= number_with_delimiter(house.price, :delimiter => ',') %><br>
-    <% end%>
+<div class="container-fluid-padding">
+<section class="jumbotron text-center">
+    <div class="container">
+      <h1>Your New Home Awaits!</h1>
+      <p class="lead text-muted">Find your perfect home from one of our unordered, random ass, too expensive, stock photo, seed data hella hard to make, non-searchable, random priced, probably not real addresses because we used Faker listings below!</p>
+      <p class="lead text-muted">Ready to put your house on the market? List your home today!.</p>
+        <%= link_to "List Your Home!", new_house_path, class: "btn btn-lg btn-primary" %>
+      </p>
+    </div>
+  </section>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3">
+        <% @houses.each do |house|%>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <% if house.picture.blank?%>
+                    <%= link_to image_tag("no_image_found_house.png", class: 'card-img-top', size: "375x250"), house_path(house)%>
+                <% else%>
+                    <%= link_to image_tag(house.picture, class: 'card-img-top', size: "300x250"), house_path(house) %>
+                <% end %>
+            <div class="card-body">
+                <h5 class="card-title"> <%= house.address %> </h5>
+                <p class="card-text">Beds: <%= house.bedrooms %> |  Baths: <%= house.bathrooms %> <br>Price: $<%= number_with_delimiter(house.price, :delimiter => ',') %></p>
+            </div>
+            </div>  
+        </div>
+        <% end %>
+    </div>
 </div>
+</div>
+

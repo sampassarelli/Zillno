@@ -1,31 +1,44 @@
-<h4>Sell your house!</h4>
-<% if flash[:house_errors] %>
-    <% flash[:house_errors].each do |error| %>
-        <div style="color: red"><%= error %></div>
-        <% end %>
-<% end %>
 
-<%= form_for (@house) do |f| %>
-    <%= f.label :address %>
-    <%= f.text_field :address%><br>
+<hr>
+<div  style="text-align: center">
+    <body>
+        
+        <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Eo_circle_blue_white_letter-z.svg/1024px-Eo_circle_blue_white_letter-z.svg.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">List Your Home With Us!</h1>
+        <%= form_for (@house) do |f| %>
+            <p><%= f.text_field :address, placeholder: "Name"  %></p>
+
+            <p><%= f.number_field :price, placeholder: "Price"  %></p>
+
+            <p><%= f.number_field :bedrooms, placeholder: "Bedrooms"  %></p>
+
+            <p><%= f.number_field :bathrooms, :step => "0.25", placeholder: "Bathroom"  %></p>
+
+            <p><%= f.text_area :description, placeholder: "Description"  %></p>
+
+            <p><%= f.text_area :picture, placeholder: "Picture URL"  %></p>
+
+             <p><%= f.collection_select :agent_id, Agent.all, :id, :full_name, prompt: true%></p>
+
+            <%= f.submit "List Home!", class: "btn btn-primary" %>
+
+            
+
+             
+         
+        <% end %>
     <br>
-    <%= f.label :price %>
-    <%= f.number_field :price%><br>
-    <br>
-    <%= f.label :agent_id %>
-    <%= f.collection_select :agent_id, Agent.all, :id, :full_name, prompt: true%><br>
-    <br>
-    <%= f.label :bedrooms %>
-    <%= f.number_field :bedrooms%><br>
-    <br>
-    <%= f.label :bathrooms %>
-    <%= f.number_field :bathrooms, :step => "0.25"%><br>
-    <br>
-    <%= f.label :description %>
-    <%= f.text_area :description%><br>
-    <br>
-    <%= f.label "Image URL" %>
-    <%= f.text_area :picture%><br>
-    <br>
-    <%= f.submit %>
-<% end %>
+        <div  style="text-align: center">
+            <div  style="text-align: center">
+                <% if flash[:house_errors] %>
+                <% flash[:house_errors].each do |error| %>
+            
+                <div class="alert alert-danger" role="alert"><%= error %></div>
+            
+                <% end %>
+                <% end %>
+            </div>
+        </div>
+        <p class="mt-5 mb-3 text-muted">© 2020-2020</p>
+    </body>
+</div>

@@ -1,19 +1,33 @@
-<h1>Hello, <%= @user.name %></h1>
 
-<%= link_to "Edit Profile", edit_user_path %>
-<br>
-<% if @user.img_url.blank?%>
-    <%= image_tag "profile_pic.png" %>
-<% else%>
-    <img src=<%= @user.img_url%> alt="profile picture" width="250" height="250"><br>
-<% end %><br>
-
-<%= @user.user_name %>
-<% if @user.houses.any? %>
-        <h3>Your House Listings:</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 img">
+    <% if @user.img_url.blank?%>
+        <%= image_tag "profile_pic.png" %>
+    <% else%>
+        <%= image_tag(@user.img_url, class: "img-rounded", size: "475x350") %>
+    <% end %><br>
+    </div>
+    <div class="col-md-6 details">
+      <blockquote>
+        <h5>Hello,<%= @user.name %>!</h5>
+      </blockquote>
+      <p>
+        <%= @user.user_name %> <br>
+        <%= @user.email %> <br>
+      </p>
+      <%= link_to "Edit Profile", edit_user_path, class: "btn btn-primary btn-sm" %><br>
+      <br>
+      
+      <br>
+      <% if @user.houses.any? %>
+        <h5>Your House Listings:</h5>
         <% @user.houses.each do |house| %>
-            <%= link_to house.address, house_path(house) %> || <%= link_to "Edit Listing", edit_house_path(house) %>|| <%= link_to "Delete Listing", house_path(house), method: :delete, data: { confirm: "Are you sure?" } %><br>
+            <%= link_to house.address, house_path(house) %> <br>
+            <%= link_to "Edit Listing", edit_house_path(house), class: "btn btn-primary btn-sm" %> <%= link_to "Delete Listing", house_path(house), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-sm" %><br>
             <br>
         <% end %>
     <% end %>
-<br>
+    </div>
+  </div>
+</div>

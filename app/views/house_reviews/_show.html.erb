@@ -1,7 +1,6 @@
-<h3>Reviews!</h3><br>
+<h3>Recent Reviews:</h3><br>
 <% @house_reviews.each do |review| %>
-    <h4><%= review.title %>:<br></h4>
-    <h4>Toured House: <%= review.toured %><br></h4>
+    <h5><%= review.title %>:<br></h5>
     <%= review.content%><br>
     <br>
 <% end %>

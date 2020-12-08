@@ -1,22 +1,26 @@
-<% if flash[:tour_errors] %>
-    <% flash[:tour_errors].each do |error| %>
-        <div style="color: red"><%= error %></div>
-        <% end %>
-<% end%>
+
 <% if @current_user.id == @house.seller.id%>
         
 <% else %>
         <h4>Book a Tour:</h4>
-                 <%= form_for ([@house, @tour]) do |f| %>
-                <%= f.label :date %>
-                <%= f.date_field :date%>
-
-                <%= f.label :time %>
-                <%= f.time_field :time%>
-
-                <%= f.label :agent_id %>
-                <%= f.collection_select :agent_id, Agent.all, :id, :full_name, prompt: true %>
-
-                <%= f.submit %>
+        <%= form_for ([@house, @tour]) do |f| %>
+                <%= f.label :date %><br>
+                <%= f.date_field :date%><br>
+                <br>
+                <%= f.label :time %><br>
+                <%= f.time_field :time%><br>
+                <br>
+                <%= f.label :agent_id %><br>
+                <%= f.collection_select :agent_id, Agent.all, :id, :full_name, prompt: true %><br>
+                <br>
+                <%= f.submit "Book Tour!", class: "btn btn-primary btn-sm"%>
         <% end %>
 <% end %>
+<br>
+<% if flash[:tour_errors] %>
+    <% flash[:tour_errors].each do |error| %>
+    
+        <div class="alert alert-danger" role="alert"><%= error %></div>
+
+        <% end %>
+<% end%>
