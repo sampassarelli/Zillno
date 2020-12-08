@@ -1,6 +1,6 @@
 class House < ApplicationRecord
     geocoded_by :address
-    after_validation :geocode
+    after_validation :geocode, if: :address_changed?
 
     has_many :house_reviews, dependent: :destroy
     has_many :tours, dependent: :destroy
@@ -18,7 +18,7 @@ class House < ApplicationRecord
    
 
     def google_map(center)
-        "https://maps.googleapis.com/maps/api/staticmap?markers=color:red%7label:C%7Ccenter=#{center}&size=500x500&zoom=17&key=#{Rails.application.credentials.google}"
+        "https://maps.googleapis.com/maps/api/staticmap?markers=color:red%7Ccenter=#{center}&size=500x500&zoom=17&key=#{Rails.application.credentials.google}"
     end
 
 end

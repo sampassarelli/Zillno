@@ -5,3 +5,44 @@
     <%= review.content%><br>
     <br>
 <% end %>
+
+
+
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default widget">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-comment"></span>
+                <h3 class="panel-title">
+                    Reviews</h3>
+            </div>
+           <% @house_reviews.each do |review| %>
+            <div class="panel-body">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-xs-2 col-md-1">
+                            <%= image_tag review.buyer.img_url, class: "img img-fluid"%>
+                                </div>
+                            <div class="col-xs-10 col-md-11">
+                                <div>
+                                    <%= review.title%>
+                                    <div class="mic-info">
+                                        By: <%= review.buyer.user_name%>
+                                    </div>
+                                <div class="comment-text">
+                                    <%= review.content%>
+                                    <% end %>  
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+            </div>
+        </div>
+    </div>
+</div>
