@@ -2,20 +2,19 @@
 
 
 <% if @current_user.id == @house.seller.id%>
-Can't make offer on your listing.
+
 <% else%>
 
 <h3>Submit a Review!</h3>
   <%= form_for ([@house, @house_review]) do |f| %>
     <%= f.label :title %><br>
     <%= f.text_field :title %><br>
+
     <br>
     <%= f.label "Your Review" %><br>
     <%= f.text_area :content %>
-    
-
       <br>
-    <%= f.submit %>
+    <%= f.submit "Submit Review!", class: "btn btn-primary btn-sm"%>
   <% end %>
 <% end %>
 <br>

@@ -11,10 +11,11 @@
         <p><%= image_tag @house.picture, size: "575x400"%> <%= image_tag @house.google_map(center: @house.address), size: "530x400" %></p>
     <% end %>
 
-    <div class="container">     
+<hr class="featurette-divider">
+
+   <br>
     <div class="row">
       <div class="col-sm-6">
-        <br>
         <h3>Agent:</h3>
         <%= @house.agent.full_name %><br>
         <br>
@@ -29,29 +30,47 @@
             <%= @house.bathrooms %><br> 
       </div>
     </div>
-  </div>
+    <hr class="featurette-divider">
+        <br>
         <h3>Description:</h3>
         <%= @house.description %><br>   
 
 
 
 
-    <br>
-    <%= render 'tours/new' %><br>
-    <br>
-    <div data-spy="scroll" data-offset="0">
-    <%= render 'tours/show' %><br>
+<hr class="featurette-divider">
+    <div class="row">
+      <div class="col-sm-6">
+            <%= render 'tours/new' %><br>
+        </div>   
+   
+        <br>
+        <div class="col-sm-6">
+            <%= render 'tours/show' %><br>
+        </div>
     </div>
+<hr class="featurette-divider">
+    <div class="row">
+        <div class="col-sm-6">
+            <%= render 'offers/new' %><br>
+        </div>
     <br>
-    <%= render 'offers/new' %><br>
+        <div class="col-sm-6">
+            <%= render 'offers/show' %><br>
+        </div>
+    </div>  
+<hr class="featurette-divider">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <%= render 'house_reviews/new' %>
+        </div>
     <br>
-    <div data-spy="scroll" data-offset="50">
-    <%= render 'offers/show' %><br>
-    </div>
-    <br>
-    <%= render 'house_reviews/new' %>
-    <br>
-    <%= render 'house_reviews/show' %><br>
+        <div class="col-sm-6">
+            <%= render 'house_reviews/show' %><br>
+        </div>
+    </div>  
+<hr class="featurette-divider">
     <h3> <%= link_to 'Back', houses_path, class: "btn btn-primary btn-lg" %></h3>
 
 </div>

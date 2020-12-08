@@ -1,6 +1,31 @@
-  <h3>Recent Offers!</h3>
-<% @offers.each do |offer| %>
-    Offer: $<%= number_with_delimiter(offer.amount, :delimiter => ',') %> | Agent: <%= offer.agent.full_name %>  <%= number_with_delimiter(@number, :delimiter => ',') %>
-    <br>
-<% end %>
 
+
+
+<h3>Recent Offers:</h3>
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default widget">
+            
+           <% @offers.each do |offer| %>
+            <div class="panel-body">
+                    <li class="list-group-item">
+                        <div class="row">
+                            
+                            <div class="col-lg col-lg">
+                                <div>
+                                    <h5>Offer: $<%= number_with_delimiter(offer.amount, :delimiter => ',') %></h5>
+                                    <div class="mic-info">
+                                        Agent: <%= offer.agent.full_name %> 
+                                    </div>
+                                <div class="comment-text">
+                                    
+                                    <% end %>  
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+            </div>
+        </div>
+    </div>
+</div>

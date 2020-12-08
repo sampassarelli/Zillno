@@ -3,12 +3,13 @@
 <% else%>
         <h4>Submit an Offer:</h4>
         <%= form_for ([@house, @offer]) do |f| %>
-                <%= f.label "Offer Amount:" %>
-                <%= f.number_field :amount%>
-                <%= f.label :agent_id %>
-                <%= f.collection_select :agent_id, Agent.all, :id, :full_name, prompt: true %>
-                
-                <%= f.submit %>
+                <%= f.label "Offer Amount:" %><br>
+                <%= f.number_field :amount%><br>
+                <br>
+                <%= f.label :agent_id %><br>
+                <%= f.collection_select :agent_id, Agent.all, :id, :full_name, prompt: true %><br>
+                <br>
+                <%= f.submit "Submit Offer!", class: "btn btn-primary btn-sm" %>
         <% end %>
 <% end %>
 <br>
