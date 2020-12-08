@@ -2,7 +2,7 @@
     <h1><%= @house.address %></h1>
     <% if @current_user.id == @house.seller.id%>
         <%= link_to "Edit Listing", edit_house_path, class: "btn btn-primary" %><br>
-
+    <% else %>
     <% end %>
     <br>
     <% if @house.picture.blank?%>
@@ -38,7 +38,7 @@
 
 
 
- <hr class="featurette-divider">
+<hr class="featurette-divider">
     <div class="row">
       <div class="col-sm-6">
             <%= render 'tours/new' %><br>
@@ -49,7 +49,7 @@
             <%= render 'tours/show' %><br>
         </div>
     </div>
- <hr class="featurette-divider">
+<hr class="featurette-divider">
     <div class="row">
         <div class="col-sm-6">
             <%= render 'offers/new' %><br>
@@ -59,7 +59,7 @@
             <%= render 'offers/show' %><br>
         </div>
     </div>  
- <hr class="featurette-divider">
+<hr class="featurette-divider">
 
     <div class="row">
         <div class="col-sm-6">
@@ -70,6 +70,7 @@
             <%= render 'house_reviews/show' %><br>
         </div>
     </div>  
- <hr class="featurette-divider">
+<hr class="featurette-divider">
     <h3> <%= link_to 'Back', houses_path, class: "btn btn-primary btn-lg" %></h3>
+
 </div>

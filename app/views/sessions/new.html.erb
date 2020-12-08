@@ -4,15 +4,14 @@
 <div  style="text-align: center">
 <div  style="text-align: center">
 <% if flash[:error] %>
-       <div class="container">
-        <div class="alert alert-danger" role="alert"><%= flash[:error] %></div>
-        </div>
+      <div class="container">
+      <div class="alert alert-danger" role="alert"><%= error %></div>
+      </div>
     <% end %>
 </div>
-
 </div>
   <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Eo_circle_blue_white_letter-z.svg/1024px-Eo_circle_blue_white_letter-z.svg.png" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Please Log In</h1>
+  <h1 class="h3 mb-3 font-weight-normal">Please log in</h1>
   <%= form_for :session, url: login_path do |f| %>
     <p><%= f.text_field :user_name, placeholder: "Username" %></p>
   
@@ -23,4 +22,3 @@
   <p class="mt-5 mb-3 text-muted">© 2020-2020</p>
 </body>
 </div>
-
