@@ -1,55 +1,57 @@
 <div class="container">
-<h1><%= @house.address %></h1>
-<% if @current_user.id == @house.seller.id%>
-<%= link_to "Edit Listing", edit_house_path, class: "btn btn-primary" %><br>
-<% else %>
-<% end %>
-<br>
-<% if @house.picture.blank?%>
-    <%= image_tag("no_image_found_house.png") %>
-<% else%>
-    <img src= <%=@house.picture%> alt="house picture" width="375" height="250"><br>
-<% end %>
-<%= image_tag @house.google_map(center: @house.address) %>
+    <h1><%= @house.address %></h1>
+    <% if @current_user.id == @house.seller.id%>
+        <%= link_to "Edit Listing", edit_house_path, class: "btn btn-primary" %><br>
+    <% else %>
+    <% end %>
+    <br>
+    <% if @house.picture.blank?%>
+        <%= image_tag("no_image_found_house.png", size: "575x400") %> <%= image_tag @house.google_map(center: @house.address), size: "500x400" %>
+    <% else%>
+        <p><%= image_tag @house.picture, size: "575x400"%> <%= image_tag @house.google_map(center: @house.address), size: "530x400" %></p>
+    <% end %>
 
-<br>
-<h3>Agent:</h3>
-<%= @house.agent.full_name %><br>
-<br>
-<h3>Price:</h3>
-$<%= number_with_delimiter(@house.price, :delimiter => ',') %><br> 
-<br>
-<h3>Address:</h3>
-<%= @house.address %><br>
-<br>
-<h3>Bedrooms:</h3>
-<%= @house.bedrooms %><br>
-<br>
-<h3>Bathrooms:</h3>
-<%= @house.bathrooms %><br>
-<br>
-<h3>Description:</h3>
-<%= @house.description %><br>
+    <div class="container">     
+    <div class="row">
+      <div class="col-sm-6">
+        <br>
+        <h3>Agent:</h3>
+        <%= @house.agent.full_name %><br>
+        <br>
+        <h3>Price:</h3>
+        $<%= number_with_delimiter(@house.price, :delimiter => ',') %><br> 
+      </div>
+      <div class="col-sm-6">
+           <h3>Bedrooms:</h3>
+            <%= @house.bedrooms %><br>
+            <br>
+            <h3>Bathrooms:</h3>
+            <%= @house.bathrooms %><br> 
+      </div>
+    </div>
+  </div>
+        <h3>Description:</h3>
+        <%= @house.description %><br>   
 
- 
 
 
-<br>
-<%= render 'tours/new' %><br>
-<br>
-<div data-spy="scroll" data-offset="0">
-<%= render 'tours/show' %><br>
-</div>
-<br>
-<%= render 'offers/new' %><br>
-<br>
-<div data-spy="scroll" data-offset="50">
-<%= render 'offers/show' %><br>
-</div>
-<br>
-<%= render 'house_reviews/new' %>
-<br>
-<%= render 'house_reviews/show' %><br>
-<h3> <%= link_to 'Back', houses_path %></h3>
+
+    <br>
+    <%= render 'tours/new' %><br>
+    <br>
+    <div data-spy="scroll" data-offset="0">
+    <%= render 'tours/show' %><br>
+    </div>
+    <br>
+    <%= render 'offers/new' %><br>
+    <br>
+    <div data-spy="scroll" data-offset="50">
+    <%= render 'offers/show' %><br>
+    </div>
+    <br>
+    <%= render 'house_reviews/new' %>
+    <br>
+    <%= render 'house_reviews/show' %><br>
+    <h3> <%= link_to 'Back', houses_path, class: "btn btn-primary btn-lg" %></h3>
 
 </div>

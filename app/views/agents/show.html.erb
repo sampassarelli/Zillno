@@ -4,7 +4,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 img">
-        <img src=<%= @agent.picture%> alt="" class="img-rounded"><br>
+        <%= image_tag(@agent.picture, class: "img-rounded", size: "475x350") %>
+       
     </div>
     <div class="col-md-6 details">
       <blockquote>
@@ -19,7 +20,8 @@
         <% @agent.houses.each do |house| %>
             <%= link_to house.address, house_path(house) %> <br>
         <% end %>
-        <h3>Scheduled Tours:</h3>
+        <br>
+        <h5>Scheduled Tours:</h5>
             <% @agent.tours.each do |tour| %>
                 <%= link_to tour.house.address, house_path(tour.house) %><br>
                 <%= tour.date %> <%= tour.time %><br>

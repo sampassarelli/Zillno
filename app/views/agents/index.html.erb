@@ -11,7 +11,7 @@
         <% @agents.each do |agent| %>
         <div class="col-md-4">
             <div class="card h-100">
-                <img src=<%= agent.picture %> alt="agent" width="350" height="300"><br>
+                <%= link_to image_tag(agent.picture, class: 'card-img-top', size: "300x250"), agent_path(agent) %>
             <div class="card-body">
                 <h5 class="card-title"> <%= link_to agent.full_name, agent_path(agent) %> </h5>
                 <p class="card-title">Years of Experience: <%= agent.years_experience %> <br></p>
