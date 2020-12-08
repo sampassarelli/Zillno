@@ -18,6 +18,8 @@
       </p>
       <%= link_to "Edit Profile", edit_user_path, class: "btn btn-primary btn-sm" %><br>
       <br>
+      
+      <br>
       <% if @user.houses.any? %>
         <h5>Your House Listings:</h5>
         <% @user.houses.each do |house| %>
