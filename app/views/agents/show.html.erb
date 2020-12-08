@@ -16,7 +16,7 @@
         About:<%= @agent.bio %> <br>
       </p>
      <br>    
-        <h5>Agent's Listings:</h5>
+        <h5><%= "#{@agent.first_name}'s" %> Listings:</h5>
         <% @agent.houses.each do |house| %>
             <%= link_to house.address, house_path(house) %> <br>
         <% end %>
@@ -24,7 +24,7 @@
         <h5>Scheduled Tours:</h5>
             <% @agent.tours.each do |tour| %>
                 <%= link_to tour.house.address, house_path(tour.house) %><br>
-                <%= tour.date %> <%= tour.time %><br>
+                Date: <%= tour.date.strftime("%A, %b %d") %>  |  Time: <%= tour.time.strftime("%I:%M %p")%><br>
             <% end %>
         <br>
     </div>
