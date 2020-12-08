@@ -1,28 +1,7 @@
-<h3>Reviews:</h3>
-<div class="container">
-    <div class="row">
-        <div class="panel panel-default widget">
-            
-           <% @house_reviews.each do |review| %>
-            <div class="panel-body">
-                    <li class="list-group-item">
-                        <div class="row">
-                            
-                            <div class="col-lg col-lg">
-                                <div>
-                                    <h5><%= review.title%></h5>
-                                    <div class="mic-info">
-                                        By: <%= review.buyer.user_name%>
-                                    </div>
-                                <div class="comment-text">
-                                    <%= review.content%>
-                                    <% end %>  
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-            </div>
-        </div>
-    </div>
-</div>
+<h3>Recent Reviews:</h3><br>
+<% @house_reviews.each do |review| %>
+    <h5><%= review.title %>:<br></h5>
+    <h6>Toured House: <%= review.toured %><br></h6>
+    <%= review.content%><br>
+    <br>
+<% end %>

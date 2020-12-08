@@ -1,29 +1,5 @@
-<h3>Booked Tours:</h3>
-<div class="container">
-    <div class="row">
-        <div class="panel panel-default widget">
-            
-           <% @tours.each do |tour| %>
-            <div class="panel-body">
-                    <li class="list-group-item">
-                        <div class="row">
-                            
-                            <div class="col-lg col-lg">
-                                <div>
-                                   
-                                    <div class="mic-info">
-                                        Date: <%= tour.date.strftime("%A, %b %d") %> | 
-                                        Time: <%= tour.time.strftime("%I:%M %p")%>
-                                    </div>
-                                <div class="comment-text">
-                                    Agent: <%= tour.agent.full_name %>
-                                    <% end %>  
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-            </div>
-        </div>
-    </div>
-</div>
+<h3>Recent Tours:</h3>
+<% @tours.each do |tour| %>
+    Date: <%= tour.date %> // Time: <%= tour.time%> | Agent: <%= tour.agent.full_name %>
+    <br>
+<% end %>
